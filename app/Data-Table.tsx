@@ -64,6 +64,9 @@ export function DataTable<TData, TValue>({ columns, data, }: DataTableProps<TDat
 
     return (
         <div>
+            <div className="font-geistSans font-extrabold tracking-wide text-center pb-8 text-xl">
+                <h1 className="">SCAL Phone Directory</h1>
+            </div>
             <div className="flex items-center pb-12">
                 <Input
                     placeholder="Filter Name"
@@ -104,9 +107,9 @@ export function DataTable<TData, TValue>({ columns, data, }: DataTableProps<TDat
             </div>
             <div className="rounded-2xl border px-8 py-4">
                 <Table className="text-sm">
-                    <TableHeader className="text-start">
+                    <TableHeader className="text-start text-blue-600 font-geistSans font-extrabold">
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow key={headerGroup.id}>
+                            <TableRow className="" key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => {
                                     return (
                                         <TableHead colSpan={1} key={header.id}>
@@ -130,7 +133,7 @@ export function DataTable<TData, TValue>({ columns, data, }: DataTableProps<TDat
                                     data-state={row.getIsSelected() && "selected"}
                                 >
                                     {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id}>
+                                        <TableCell className="border" key={cell.id}>
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </TableCell>
                                     ))}
